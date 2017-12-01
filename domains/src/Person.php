@@ -1,9 +1,10 @@
 <?php
 namespace Domain;
 
+use Domain\Interfaces\PersonContract;
 use Domain\Interfaces\PersonState;
 
-class Person  {
+class Person implements PersonContract {
     private $state;
 
     public function __construct(PersonState $personState) {
@@ -18,11 +19,11 @@ class Person  {
         $this->state = $this->state->awake($this);
     }
 
-    public function state() {
+    public function state() : PersonState {
         return $this->state;
     }
 
-    public function code(Task $task) : ?Program {
+    public function code(Task $task) : Program {
         $taskResult = $task->number() * 2;
         return new Program($taskResult);
     }

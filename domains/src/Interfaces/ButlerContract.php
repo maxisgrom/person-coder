@@ -1,6 +1,8 @@
 <?php
 namespace Domain\Interfaces;
 
-interface ButlerContract {
+use Domain\Person;
 
+interface ButlerContract {
+    public function checkAwake(Person $person) : bool;
 }

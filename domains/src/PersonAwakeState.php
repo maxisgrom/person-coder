@@ -4,7 +4,6 @@ namespace Domain;
 use Domain\Interfaces\PersonState;
 use Exception;
 
-// Бодрствование
 class PersonAwakeState implements PersonState {
 
     public function awake(Person $person) {
